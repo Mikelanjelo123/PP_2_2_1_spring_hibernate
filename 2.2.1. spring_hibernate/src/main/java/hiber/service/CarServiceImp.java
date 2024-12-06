@@ -17,12 +17,12 @@ public class CarServiceImp implements CarService {
     @Autowired
     private CarDaoImp carDaoImp;
 
-    @Transactional
+
     @Override
     public void add(Car car) {
         carDao.add(car);
     }
-
+    @Transactional(readOnly = true)
     @Override
     public List<Car> listCars() {
         return carDao.ListCars();
