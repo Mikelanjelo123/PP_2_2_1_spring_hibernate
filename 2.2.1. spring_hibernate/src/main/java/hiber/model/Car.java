@@ -16,6 +16,7 @@ public class Car {
     @Id
     @Column(name = "series")
     private int serial;
+
     public Car() {
 
     }

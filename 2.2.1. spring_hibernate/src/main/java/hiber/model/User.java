@@ -40,11 +40,11 @@ public class User {
         this.email = email;
     }
 
-    public User(Car car, String email, String lastName, String firstName) {
-        this.car = car;
-        this.email = email;
-        this.lastName = lastName;
+    public User(String firstName, String lastName, String email, Car car) {
         this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.car = car;
     }
 
     public Long getId() {
