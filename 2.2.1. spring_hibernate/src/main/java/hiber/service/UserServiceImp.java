@@ -16,8 +16,6 @@ public class UserServiceImp implements UserService {
    @Autowired
    private UserDao userDao;
     @Autowired
-    private UserDaoImp userDaoImp;
-    @Autowired
     private UserService userService;
 
    @Transactional

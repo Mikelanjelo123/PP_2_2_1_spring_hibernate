@@ -13,11 +13,6 @@ import java.util.List;
 public class CarServiceImp implements CarService {
     @Autowired
     private CarDao carDao;
-
-    @Autowired
-    private CarDaoImp carDaoImp;
-
-
     @Override
     public void add(Car car) {
         carDao.add(car);

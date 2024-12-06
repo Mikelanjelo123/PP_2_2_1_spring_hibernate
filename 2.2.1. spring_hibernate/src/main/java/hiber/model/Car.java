@@ -8,8 +8,6 @@ import java.util.Objects;
 @Table(name = "cars")
 public class Car {
 
-    @OneToOne
-    private User user;
     @Column(name = "model")
     private String model;
 
