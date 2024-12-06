@@ -2,12 +2,10 @@ package hiber.model;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 import java.util.Objects;
 
-@Component
 @Entity
 @Table(name = "cars")
 
@@ -15,8 +13,7 @@ public class Car {
 
     @OneToOne
     @PrimaryKeyJoinColumn
-    @Autowired
-   private User user;
+    private User user;
 
     @Column(name = "model")
     private String model;
@@ -24,14 +21,13 @@ public class Car {
     @Column(name = "series")
     private int series;
 
+    public Car() {
+
+    }
 
     public Car(String model, int series) {
         this.model = model;
         this.series = series;
-    }
-
-    public Car() {
-
     }
 
 
