@@ -40,6 +40,13 @@ public class User {
         this.email = email;
     }
 
+    public User(Car car, String email, String lastName, String firstName) {
+        this.car = car;
+        this.email = email;
+        this.lastName = lastName;
+        this.firstName = firstName;
+    }
+
     public Long getId() {
         return id;
     }
