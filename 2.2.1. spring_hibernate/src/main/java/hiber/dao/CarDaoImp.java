@@ -30,13 +30,13 @@ public class CarDaoImp implements CarDao {
     }
 
     @Override
-    public User fetchUserByCarModelAndSeries(Car serial, Car model) {
+    public String fetchUserByCarModelAndSeries(int serial, String model) {
         String hql = "SELECT u FROM User u JOIN u.car c WHERE c.model = :model AND c.serial = :series";
         TypedQuery<User> query = sessionFactory.getCurrentSession().createQuery(hql, User.class);
         query.setParameter("model", model);
         query.setParameter("series", serial);
-
-        return query.getResultList().stream().findFirst().orElse(null);
+        User user = query.getResultList().stream().findFirst().orElse(null);
+        return user != null ? user.toString() : null;
     }
 
 }

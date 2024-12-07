@@ -25,7 +25,7 @@ public class CarServiceImp implements CarService {
     }
 
     @Transactional(readOnly = true)
-    public User fetchUserByCarModelAndSeries(Car serial, Car model) {
+    public String fetchUserByCarModelAndSeries(int serial, String model) {
         return carDao.fetchUserByCarModelAndSeries(serial, model);
     }
 }

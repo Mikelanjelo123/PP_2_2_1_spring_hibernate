@@ -34,7 +34,7 @@ public class MainApp {
         userService.add(new User("User7", "Lastname7", "user7@mail.ru", mercedes));
 
 
-        carService.fetchUserByCarModelAndSeries(,"BMW");
+
 
         List<User> users = userService.listUsers();
         for (User user : users) {
@@ -49,5 +49,7 @@ public class MainApp {
             System.out.println("Serial = " + car.getSerial());
             System.out.println("Model = " + car.getModel());
         }
+
+        System.out.println(carService.fetchUserByCarModelAndSeries(12345,"BMW"));
     }
 }

@@ -10,5 +10,5 @@ public interface CarService {
 
     List<Car> listCars();
 
-    public User fetchUserByCarModelAndSeries(Car serial, Car model);
+    public String fetchUserByCarModelAndSeries(int serial, String model);
 }
