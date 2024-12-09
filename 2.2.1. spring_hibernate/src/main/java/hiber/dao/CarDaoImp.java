@@ -10,7 +10,6 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
-@Transactional
 @Repository
 public class CarDaoImp implements CarDao {
     @Autowired
@@ -28,15 +27,4 @@ public class CarDaoImp implements CarDao {
         TypedQuery<Car> query = sessionFactory.getCurrentSession().createQuery("from Car");
         return query.getResultList();
     }
-
-    @Override
-    public String fetchUserByCarModelAndSeries(int serial, String model) {
-        String hql = "SELECT u FROM User u JOIN u.car c WHERE c.model = :model AND c.serial = :series";
-        TypedQuery<User> query = sessionFactory.getCurrentSession().createQuery(hql, User.class);
-        query.setParameter("model", model);
-        query.setParameter("series", serial);
-        User user = query.getResultList().stream().findFirst().orElse(null);
-        return user != null ? user.toString() : null;
-    }
-
 }

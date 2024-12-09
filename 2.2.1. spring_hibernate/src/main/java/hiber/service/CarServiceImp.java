@@ -9,11 +9,15 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-
 @Service
 public class CarServiceImp implements CarService {
+    private final CarDao carDao;
+
     @Autowired
-    private CarDao carDao;
+    public CarServiceImp(CarDao carDao) {
+        this.carDao = carDao;
+    }
+@Transactional
     @Override
     public void add(Car car) {
         carDao.add(car);
@@ -22,10 +26,5 @@ public class CarServiceImp implements CarService {
     @Override
     public List<Car> listCars() {
         return carDao.ListCars();
-    }
-
-    @Transactional(readOnly = true)
-    public String fetchUserByCarModelAndSeries(int serial, String model) {
-        return carDao.fetchUserByCarModelAndSeries(serial, model);
     }
 }

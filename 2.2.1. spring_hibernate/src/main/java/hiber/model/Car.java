@@ -1,6 +1,8 @@
 package hiber.model;
 
 
+import com.sun.xml.bind.v2.model.core.ID;
+
 import javax.persistence.*;
 import java.util.Objects;
 
@@ -12,8 +14,12 @@ public class Car {
     @Column(name = "model")
     private String model;
 
-
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private int id;
+
+
     @Column(name = "series")
     private int serial;
 

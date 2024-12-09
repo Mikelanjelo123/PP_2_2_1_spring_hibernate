@@ -50,6 +50,6 @@ public class MainApp {
             System.out.println("Model = " + car.getModel());
         }
 
-        System.out.println(carService.fetchUserByCarModelAndSeries(12345,"BMW"));
+        System.out.println(userService.getUserByCar( 12345, "BMW"));
     }
 }
